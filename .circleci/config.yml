@@ -28,14 +28,14 @@ jobs:
           command: |
             if [ "${CIRCLE_BRANCH}" == "master" ]; then
               cp Dockerfile.production Dockerfile
-              docker build -t ima8/example-nodejs-circle:latest .
-              docker build -t ima8/example-nodejs-circle:${CIRCLE_SHA1} .
-              docker push ima8/example-nodejs-circle:latest
-              docker push ima8/example-nodejs-circle:${CIRCLE_SHA1}
+              docker build -t puidts/workshop:latest .
+              docker build -t puidts/workshop:${CIRCLE_SHA1} .
+              docker push puidts/workshop:latest
+              docker push puidts/workshop:${CIRCLE_SHA1}
             elif [ "${CIRCLE_BRANCH}" == "staging" ]; then
               cp Dockerfile.staging Dockerfile
-              docker build -t ima8/example-nodejs-circle-staging:latest .
-              docker push ima8/example-nodejs-circle-staging:latest
+              docker build -t puidts/workshop:latest .
+              docker push puidts/workshop:latest
             else
               echo "This is ${CIRCLE_BRANCH}"
             fi
