@@ -1,3 +1,7 @@
+# Javascript Node CircleCI 2.0 configuration file
+#
+# Check https://circleci.com/docs/2.0/language-javascript/ for more details
+# build , test , push to docker hub without workflows
 version: 2
 jobs:
   build:
@@ -36,4 +40,5 @@ jobs:
               echo "This is ${CIRCLE_BRANCH}"
             fi
       - run: echo Done
+
               
