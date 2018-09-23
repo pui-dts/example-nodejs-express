@@ -27,13 +27,13 @@ jobs:
           name: "Build docker image and push to docker hub"
           command: |
             if [ "${CIRCLE_BRANCH}" == "master" ]; then
-              cp Dockerfile.production Dockerfile
+              cp Dockerfile Dockerfile
               docker build -t puidts/workshop:latest .
               docker build -t puidts/workshop:${CIRCLE_SHA1} .
               docker push puidts/workshop:latest
               docker push puidts/workshop:${CIRCLE_SHA1}
             elif [ "${CIRCLE_BRANCH}" == "staging" ]; then
-              cp Dockerfile.staging Dockerfile
+              cp Dockerfile Dockerfile
               docker build -t puidts/workshop:latest .
               docker push puidts/workshop:latest
             else
