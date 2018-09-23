@@ -23,7 +23,7 @@ jobs:
       - run: 
           name: "Build docker image and push to ducker hub"
           command: |
-              cp Dockerfile.production Dockerfile
+              cp Dockerfile Dockerfile
               docker build -t puidts/workshop:latest .
               docker build -t puidts/workshop:${CIRCLE_SHA1} .
               docker push puidts/workshop:latest
